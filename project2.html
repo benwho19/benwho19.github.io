@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Benjamin Ho</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">Projects</div>
+						<!-- <a href="index.html" class="logo">Projects</a> -->
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">About Me</a></li>
+							<li class="active"><a href="projects.html">Projects</a></li>
+							<li><a href="resume.html">Resumé</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/benjamin-ho-asd/" class="icon brands fa-linkedin"
+								target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+							<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+							<li><a href="https://github.com/benwho19" class="icon brands fa-github"
+								target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<div style="display: flex; flex-direction: column;">
+							<!-- <ul class="actions special">
+								<li><a href="projects.html" class="button icon solid solo fa-arrow-left">Continue</a></li>
+							</ul> -->
+							<div style="display: flex; justify-content: space-between;">
+								<!-- <a href="projects.html" class="button icon solid solo fa-arrow-left">Continue</a> -->
+								<a href="projects.html" class="button icon solid fa-arrow-left"> Back to all projects </a>
+								<h2> Economic data analysis  </h2> 
+								<a href="https://github.com/benwho19/fred-analysis" class="button"
+								target="_blank" rel="noopener noreferrer">View code</a>
+							</div>
+
+							<div style="margin-top: 44px;">
+								<div>
+									Our goal in this project is to analyze economic data from the 
+									<a href="https://fred.stlouisfed.org/docs/api/fred/"
+									target="_blank" rel="noopener noreferrer"> FRED </a>
+									<a href="https://github.com/mortada/fredapi"
+									target="_blank" rel="noopener noreferrer"> API. </a>
+
+									We'll be looking to see if we can find any interesting trends related
+									to unemployment in the U.S. 
+									
+								</div>
+
+								<div style="margin-top: 20px;">
+									Technologies used: Python, Pandas, Numpy, Matplotlib, Plotly, Jupyter.
+								</div>
+							</div>
+						</div>
+
+						<div className="" style="display: flex; justify-content: space-between;">
+							<div style="width: 50%;"> 
+								We created a bunch of different visualizations to better understand our data.
+								Here, we see a bar graph showing unemployment rates at a given time, May 2020 for example,
+								for various states.
+							</div>
+							<div style="width: 50%;">
+								<img class="image fit" src="images/project2/unempl-bar.png" width="700px" height="400px" />
+							</div>
+							
+						</div>
+						<div style="display: flex; justify-content: space-between;">
+							<div style="width: 40%;">
+								Here, we see unemployment rates over time, from the 1980's to 2020's, for various
+								states. We see that for the most part, all these lines generally follow each other.
+							</div>
+							<div style="width: 60%;">
+								<img class="image fit" src="images/project2/unempl-line.png" width="700px" height="350px"/>
+							</div>
+						</div>
+
+						<div style="display: flex; justify-content: space-between;">
+							<div style="width: 40%;">
+								And finally, we plotted each state's unemployment line graph against its participation rate line graph.
+								It's interesting that not only do all of these states seem to have different behaviors with both their
+								unemployment and participation rates, but also that there doesn't seem to be a discernible relationship 
+								between unemployment and participation that can be clearly extrapolated. 
+							</div>
+							<div style="width: 60%;">
+								<img class="image fit" src="images/project2/unempl-particip.png" width="700px" height="350px"/>
+							</div>
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

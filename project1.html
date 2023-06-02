@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Benjamin Ho</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">Projects</div>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">About Me</a></li>
+							<li class="active"><a href="projects.html">Projects</a></li>
+							<li><a href="resume.html">Resumé</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/benjamin-ho-asd/" class="icon brands fa-linkedin 
+								target="_blank" rel="noopener noreferrer""><span class="label">Twitter</span></a></li>
+							<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+							<li><a href="https://github.com/benwho19" class="icon brands fa-github"
+								target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<div style="display: flex; flex-direction: column;">
+							<!-- <ul class="actions special">
+								<li><a href="projects.html" class="button icon solid solo fa-arrow-left">Continue</a></li>
+							</ul> -->
+							<div style="display: flex; justify-content: space-between;">
+								<!-- <a href="projects.html" class="button icon solid solo fa-arrow-left">Continue</a> -->
+								<a href="projects.html" class="button icon solid fa-arrow-left"> Back to all projects </a>
+								<h2> Housing regression  </h2> 
+								<a href="https://github.com/benwho19/housing-analysis" class="button"
+								target="_blank" rel="noopener noreferrer">View code</a>
+							</div>
+
+							<div style="margin-top: 44px;">
+								<div>
+									In this project, we're working with a housing dataset. It contains
+									data such as Avg Area Income, Avg Area House Age, Price, and Area Population.
+									Our goal is to perform a data analysis on it in order to figure out which features
+									are most closely associated with a house's price. 
+									
+									Afterwards, we will train a linear regression model
+									to try to predict a house's price based on its other features.
+								</div>
+
+								<div style="margin-top: 20px;">
+									Technologies used: Python, Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn.
+								</div>
+								<div style="margin-top: 20px;">
+									Here's a quick snapshot of what the data looks like:
+
+								</div>
+								<img class="image fit" src="images/project1/data-head-screenshot.png" alt="" width="90%"/>
+								
+							</div>
+						</div>
+
+						<div className="" style="display: flex; justify-content: space-between;">
+							<div style="width: 50%;"> 
+								<div>
+									After getting a brief look at the data by using various Pandas methods 
+									(such as .head, .describe, etc.), we conducted an exploratory data analysis
+									to do a deeper dive into the data. 
+									We used Seaborn's jointplot method, which draws a plot of two variables with bivariate and univariate graphs,
+									to look for any relationships between features.
+								</div>
+
+								<!-- <br/> -->
+								<div style="margin-top: 10px;"> 
+									One of the last visualizations we created was a heatmap of these correlations, which
+									is shown here on the right. 
+									We see that a feature like 'Avg Area Income' is correlated
+									quite strongly with price, whereas a feature like 'Avg Area Number of Bedrooms' has a 
+									weak correlation with price.
+								</div>
+							</div>
+							<div style="width: 50%;">
+								<img class="image fit" src="images/project1/heatmap.png"  />
+							</div>
+							
+						</div>
+						<div style="display: flex; justify-content: space-between;">
+							<div style="width: 50%;">
+								After finishing the EDA, we then wanted to build a linear regression model. So we
+								split our data into a training set and test set.
+								<br/>
+								After first training our model to make predictions on price from other features, 
+								we make our test predictions and then evaluate the model's performance.
+								Here is a scatterplot of the model's residuals to the right. We see that it has performed
+								quite well.
+								<br/>
+								We also evaluated the model's coefficients and see that they are normally distributed, which
+								tells us this model was a good choice for this data. 
+
+
+							</div>
+							<div style="width: 50%;">
+								<img src="images/project1/scatter.png" width="550px" height="550px"/>
+							</div>
+							
+						</div>
+						
+
+						<!-- Post -->
+							<!-- <section class="post">
+								<header class="major">
+									<span class="date">April 25, 2017</span>
+									<h1>This is a<br />
+									Generic Page</h1>
+									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
+									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
+									amet nullam sed etiam veroeros.</p>
+								</header>
+								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
+								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+							</section> -->
+
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
