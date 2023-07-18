@@ -45,95 +45,218 @@
 							<div style="display: flex; justify-content: space-between;">
 								<!-- <a href="projects.html" class="button icon solid solo fa-arrow-left">Continue</a> -->
 								<a href="projects.html" class="button icon solid fa-arrow-left"> Back to all projects </a>
-								<h2> Housing regression  </h2> 
-								<a href="https://github.com/benwho19/housing-analysis" class="button"
+								<h2> Carbon Emissions Prediction  </h2> 
+								<a href="https://github.com/benwho19/carbon-emissions" class="button"
 								target="_blank" rel="noopener noreferrer">View code</a>
 							</div>
 
 							<div style="margin-top: 44px;">
 								<div>
-									In this project, we're working with a housing dataset. It contains
-									data such as Avg Area Income, Avg Area House Age, Price, and Area Population.
-									Our goal is to perform a data analysis on it in order to figure out which features
-									are most closely associated with a house's price. 
-									
-									Afterwards, we will train a linear regression model
-									to try to predict a house's price based on its other features.
+									In this project, we will be working with a vehicle dataset containing 16 vehicle classes, 42 makes, and over 2,000 different models.
+
+									Our first objective is to conduct an exploratory data analysis (EDA) so we can better understand our data and 
+									also identify interesting trends and statistics about these classes, makes, and models.
+
+								</div>
+
+								<div style="margin-top: 20px;">
+									Next, we want to identify which features of a vehicle correlate most strongly with its CO2 emissions. 
+									Then we will run a linear regression model to see how well the model predicts a vehicle's emissions based on 
+									those features.
+
 								</div>
 
 								<div style="margin-top: 20px;">
 									Technologies used: Python, Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn.
 								</div>
-								<div style="margin-top: 20px;">
-									Here's a quick snapshot of what the data looks like:
-
-								</div>
-								<img class="image fit" src="images/project1/data-head-screenshot.png" alt="" width="90%"/>
-								
 							</div>
 						</div>
 
-						<div className="" style="display: flex; justify-content: space-between;">
-							<div style="width: 50%;"> 
+						<div>
+							<div>
+								Here's a quick look at what the data's format looks like:
+							</div>
+							<img class="image fit" src="images/project1/emissions-head.png" alt="" width="90%"/>
+						</div>
+
+						<div className="" style="display: flex; flex-direction: column; justify-content:space-between;">
+							<div> 
 								<div>
 									After getting a brief look at the data by using various Pandas methods 
 									(such as .head, .describe, etc.), we conducted an exploratory data analysis
 									to do a deeper dive into the data. 
-									We used Seaborn's jointplot method, which draws a plot of two variables with bivariate and univariate graphs,
-									to look for any relationships between features.
+								
 								</div>
 
 								<!-- <br/> -->
-								<div style="margin-top: 10px;"> 
-									One of the last visualizations we created was a heatmap of these correlations, which
-									is shown here on the right. 
-									We see that a feature like 'Avg Area Income' is correlated
-									quite strongly with price, whereas a feature like 'Avg Area Number of Bedrooms' has a 
-									weak correlation with price.
+								<div style="margin-top: 20px;"> 
+									One of the first questions we wanted to answer was: which vehicle makes perform the best and the worst in
+									terms of CO2 emissions? This chart below helps us answer that. We see that Smart, Honda, and Fiat
+									are the best performers; and Bugatti, Lamborghini, and SRT are the worst.
 								</div>
 							</div>
-							<div style="width: 50%;">
-								<img class="image fit" src="images/project1/heatmap.png"  />
+							<div>
+								<img class="image fit" src="images/project1/make-emissions.png"  />
 							</div>
-							
 						</div>
-						<div style="display: flex; justify-content: space-between;">
-							<div style="width: 50%;">
-								After finishing the EDA, we then wanted to build a linear regression model. So we
+
+						<div className="" style="display: flex; flex-direction: column; justify-content:space-between;">
+							<div> 
+								<div style="margin-bottom: 20px;">
+									Next, we'll get a more detailed look at this same comparison by looking at the 
+									box plots for each vehicle make. This lets us take a look at the median emissions for 
+									each vehicle make as well as its interquartile range (IQR). And then we can 
+									compare that to the sample median of CO2 emissions across all vehicles 
+									(represented by the red dotted line.)
+
+									<i> (To see further explanations for the boxplots and the IQR, see the Jupyter notebook 
+									<a
+								href="https://github.com/benwho19/carbon-emissions/blob/main/CO2-Linear-Regression.ipynb"
+							target="_blank" rel="noopener noreferrer"> here </a>.)
+									</i>
+								
+								</div>
+
+							</div>
+							<div>
+								<img class="image fit" src="images/project1/make-emissions-box.png"  />
+							</div>
+						</div>
+
+						<div className="" style="display: flex; flex-direction: column; justify-content:space-between;">
+							<div> 
+								<div>
+									Next, we explored other features such as a vehicle's fuel consumption in the city
+									vs. on the highway (bottom-left chart) and the number of cylinders in a vehicle (bottom-right chart).
+
+								</div>
+
+								<div style="margin-top: 15px; margin-bottom: 15px;">
+									We see that fuel consumption is higher in the city, and that the most common
+									number of cylinders in a vehicle are 4 and 6.
+								</div>
+
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<div>
+										<img src="images/project1/fuel-consumption.png" width="350px" height="350px"/>
+									</div>
+									<div>
+										<img src="images/project1/cylinders.png" width="600px" height="250px"/>
+									</div>
+								</div>
+							</div>
+							<div>
+								<img class="image fit" src=""  />
+							</div>
+						</div>
+						<div style="display: flex; flex-direction: column; justify-content: space-between;">
+							<div>
+								<div>
+									After finishing the EDA, we then wanted to build a linear regression model to make predictions
+									on a vehicle's CO2 emissions based on its other features. First,
+									we looked for relationships between the features of our data.
+								</div>
+
+								<div style="margin-top: 20px;">
+									In the bottom-left chart, we have a heatmap
+									of the correlations between our different vehicle features. We see that
+									CO2 emissions are most strongly correlated with engine size and fuel consumption.
+								</div>
+
+								<div style="margin-top: 20px; margin-bottom: 15px;">
+									And in the bottom-right chart, we have a scatter plot to show the relationship between
+									each vehicle's engine size and its CO2 emissions, 
+									with a best-fit line drawn. Engine size will be the first feature we will use to make our
+									predictions.
+								</div>
+							</div>
+							<div style="display: flex; justify-content: space-between;">
+								<div style="width: 45%;">
+									<img src="images/project1/heatmap.png" width="350px" height="350px"/>
+								</div>
+								<div style="width: 40%;">
+									<img src="images/project1/engine-size-scatter.png" width="350px" height="350px"/>
+								</div>
+
+							</div>	
+						</div>
+
+						<div>
+							<div style="margin-top: 20px;">
+								We first
 								split our data into a training set and test set.
-								<br/>
-								After first training our model to make predictions on price from other features, 
+								After training our model on the training set,
 								we make our test predictions and then evaluate the model's performance.
-								Here is a scatterplot of the model's residuals to the right. We see that it has performed
-								quite well.
-								<br/>
-								We also evaluated the model's coefficients and see that they are normally distributed, which
-								tells us this model was a good choice for this data. 
+							</div>
 
+							<div style="margin-top: 20px;">
+								Our simple linear regression model achieved a 64% accuracy in predicting a vehicle's CO2 emissions
+								from its engine size. 
+								<ul>
+									<li> R2 score: 0.64 </li>
+									<li> Mean absolute error: 22.69 </li>
+									<li> Mean squared error: 895.56 </li>
+									<li> Root mean squared error: 29.93 </li>
+								</ul>
+
+								We could do better. So we then run a multiple linear regression model, which now additionally uses a vehicle's number of
+								cylinders and combined fuel consumption to predict its emissions, and we are able to achieve an 86%
+								accuracy.
+								<ul>
+									<li> R2 score: 0.86 </li>
+									<li> Mean absolute error: 13.15 </li>
+									<li> Mean squared error: 421.15 </li>
+									<li> Root mean squared error: 20.52 </li>
+								</ul>
+
+								We see that our R2 score is higher and our MAE, MSE, and RMSE are all lower.
+								<i> (The R2 score tells us how well our model performs. It has a maximum value of 1.0 and we want it to be as high as possible.
+									The MAE, MSE, and RMSE all measure the amount of error from our model, so a lower number is better for
+									these three.
+									To see further explanations for these metrics, see the Jupyter notebook that is linked below.)</i>
 
 							</div>
-							<div style="width: 50%;">
-								<img src="images/project1/scatter.png" width="550px" height="550px"/>
-							</div>
-							
+
+
 						</div>
-						
 
-						<!-- Post -->
-							<!-- <section class="post">
-								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
-								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
-							</section> -->
+						<div>
+							<div style="margin-bottom: 24px;">
+								Click <a
+								href="https://github.com/benwho19/carbon-emissions/blob/main/CO2-Linear-Regression.ipynb"
+							target="_blank" rel="noopener noreferrer"> here </a> to see the full
+							analysis in the Jupyter notebook.
+							Otherwise, we have listed a summary of our findings below.
 
+							</div>
+							<h2> Summary of findings: </h3>
+							<div>
+
+								<b> Findings from our analysis:</b>
+								<ul>
+									<li> The most popular vehicle models are the Ford F-150 followed by the Ford Mustang. </li>
+									<li> The most popular vehicle makes are Ford, Chevrolet, and BMW. </li>
+									<li> The most popular vehicle classes are small SUVs and mid-size sedans. </li>
+									<li> Car makes with the least CO2 emissions are Smart, Honda, and Fiat. </li>
+									<li> Car makes with the most CO2 emissions are Bugatti, Rolls-Royce, (Dodge) SRT, and Lamborghini. </li>
+									<li> Vehicle classes with the least emissions are small station wagons and compacts. </li>
+									<li> Vehicle classes with the most emissions are cargo vans and passenger vans. </li>
+									<li> 43.6% of vehicles have 4 cylinders, 33.1% have 6 cylinders, and 19% have 8 cylinders. </li>
+									<li> 16% of cars have a manual transmission. </li>
+									<li> The most used fuel types are regular gasoline and premium gasoline. </li>
+									<li> The features of a car most strongly associated with CO2 emissions are engine size, number of cylinders, and fuel consumption. </li>
+								</ul>
+
+								<b> Results from our predictions:</b>
+								<ul>
+									<li> Our simple linear regression model used engine size to predict CO2 emission 
+										levels. This model achieved a 64% accuracy in its prediction. </li>
+									<li> Our multiple linear regression model used engine size, number of cylinders, 
+										and combined fuel consumption to predict CO2 emission levels. This model achieved 
+										an 86% accuracy in its prediction.</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 			</div>
 

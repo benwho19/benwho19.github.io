@@ -46,60 +46,190 @@
 							<div style="display: flex; justify-content: space-between;">
 								<!-- <a href="projects.html" class="button icon solid solo fa-arrow-left">Continue</a> -->
 								<a href="projects.html" class="button icon solid fa-arrow-left"> Back to all projects </a>
-								<h2> Economic data analysis  </h2> 
-								<a href="https://github.com/benwho19/fred-analysis" class="button"
+								<h2> Instacart Users Analysis  </h2> 
+								<a href="https://github.com/benwho19/instacart-analysis" class="button"
 								target="_blank" rel="noopener noreferrer">View code</a>
 							</div>
 
 							<div style="margin-top: 44px;">
 								<div>
-									Our goal in this project is to analyze economic data from the 
-									<a href="https://fred.stlouisfed.org/docs/api/fred/"
-									target="_blank" rel="noopener noreferrer"> FRED </a>
-									<a href="https://github.com/mortada/fredapi"
-									target="_blank" rel="noopener noreferrer"> API. </a>
+									In this project, we will be analyzing an Instacart dataset which is anonymized and contains a sample of over 3 million grocery orders from more than 200,000 Instacart users.
 
-									We'll be looking to see if we can find any interesting trends related
-									to unemployment in the U.S. 
-									
+									Our goals for the analysis will be to identify trends related to customer ordering behavior as well as to determine which products, aisles, and departments are the most popular.
+								</div>
+								
+								<div style="margin-top: 20px;"> My motivation for doing this analysis was that I am naturally curious to peek into
+									the behaviors of people as a whole, and to see what trends among that behavior can be identified.
 								</div>
 
 								<div style="margin-top: 20px;">
-									Technologies used: Python, Pandas, Numpy, Matplotlib, Plotly, Jupyter.
+									Technologies used: Python, Pandas, Numpy, Matplotlib, Plotly.
 								</div>
 							</div>
 						</div>
 
 						<div className="" style="display: flex; justify-content: space-between;">
-							<div style="width: 50%;"> 
-								We created a bunch of different visualizations to better understand our data.
-								Here, we see a bar graph showing unemployment rates at a given time, May 2020 for example,
-								for various states.
+							<div style="width: 40%;"> 
+								<div>
+									After our imports, file read-ins, and initial peek at our data, one of the first things we wanted
+									to take a look at was:
+									which products were the most ordered? 
+								</div>
+								<div style="margin-top: 20px;">
+									In the chart to the right,
+									produce seems to be very popular: bananas, strawberries, spinach, avocados, and lemons are
+									among the top 10 most ordered products.
+								</div>
 							</div>
-							<div style="width: 50%;">
-								<img class="image fit" src="images/project2/unempl-bar.png" width="700px" height="400px" />
+							<div style="width: 60%;">
+								<img class="image fit" src="images/project2/most-ordered-products-2.png" style="margin-left: 40px;" />
 							</div>
 							
 						</div>
 						<div style="display: flex; justify-content: space-between;">
 							<div style="width: 40%;">
-								Here, we see unemployment rates over time, from the 1980's to 2020's, for various
-								states. We see that for the most part, all these lines generally follow each other.
+
+								<div>
+									Next, we wanted to see which time of day was the most popular for users to place
+									their orders.
+								</div>
+								<div style="margin-top: 20px;"> 
+									In the chart to the right, we see that the most popular times are between 9am and 4pm.
+								</div>
+
 							</div>
 							<div style="width: 60%;">
-								<img class="image fit" src="images/project2/unempl-line.png" width="700px" height="350px"/>
+								<img class="image fit" src="images/project2/orders-time-day.png" />
 							</div>
 						</div>
 
 						<div style="display: flex; justify-content: space-between;">
 							<div style="width: 40%;">
-								And finally, we plotted each state's unemployment line graph against its participation rate line graph.
-								It's interesting that not only do all of these states seem to have different behaviors with both their
-								unemployment and participation rates, but also that there doesn't seem to be a discernible relationship 
-								between unemployment and participation that can be clearly extrapolated. 
+
+								<div>
+									We were also curious about customer reorders, specifically: what were the most
+									common intervals of time between an order and a reorder of that same product by a given
+									user?
+								</div>
+
+								<div style="margin-top: 20px;">
+									In the chart to the right, we see that the most common intervals are 1 week and 1 month.
+
+								</div>
 							</div>
 							<div style="width: 60%;">
-								<img class="image fit" src="images/project2/unempl-particip.png" width="700px" height="350px"/>
+								<img class="image fit" src="images/project2/days-before-reoder.png"/>
+							</div>
+						</div>
+
+						<div style="display: flex; justify-content: space-between;">
+							<div style="width: 45%;">
+
+								<div>
+									Finally, we wanted to see which aisles were the best-selling
+									in terms of user orders.
+
+								</div>
+
+								<div style="margin-top: 20px;">
+									In the chart to the right, we see that both fresh and packaged fruits and vegetables,
+									yogurt, cheese, and sparkling water are among our best-selling aisles.
+								</div>
+							</div>
+							<div style="width: 55%;">
+								<img class="image fit" src="images/project2/best-selling-aisles.png" />
+							</div>
+						</div>
+
+						<div>
+							<div style="margin-bottom: 24px;">
+								We answered many more questions similar to these, so click <a
+								href="https://github.com/benwho19/instacart-analysis/blob/main/Instacart.ipynb"
+							target="_blank" rel="noopener noreferrer"> here </a> to see the full
+							analysis in the Jupyter notebook.
+							Otherwise, we have listed a summary of our findings below.
+
+							</div>
+							<h2> Summary of findings: </h3>
+							<div>
+								<b> Customer ordering trends </b>
+								<ul>
+									<li> Most orders are made between 9am and 4pm </li>
+									<li> The most common number of total orders across customers is 4 </li>
+									<li> The most common number of products in an order is 5 </li>
+									<li> 59% of all ordered products are reorders (were previously ordered by that customer) </li>
+									<li> The most common interval of time between an order and a reorder of that same product is either 1 week or 1 month </li>
+								</ul>
+							</div>
+
+							<div style="margin-top: 20px;">
+								<b>The best-selling departments (top 5)</b>
+								<ol>
+									<li> Produce </li>
+									<li> Dairy & eggs </li>
+									<li> Snacks </li>
+									<li> Beverages </li>
+									<li> Frozen </li>
+								</ol>
+							</div>
+
+							<div >
+								<b>The best-selling aisles within each department (arbitrarily listing 5)</b>
+								<ul>
+									<li> Bakery: bread </li>
+									<li> Alcohol: beer cooler </li>
+									<li> Beverages: tea </li>
+									<li> Canned goods: soup broth </li>
+									<li> Dairy & eggs: yogurt </li>
+								</ul>
+							</div>
+
+							<div style="margin-top: 20px;">
+								<b>The best-selling aisles overall (top 5)</b>
+								<ol>
+									<li> Fresh vegetables </li>
+									<li> Fresh fruits </li>
+									<li> Packaged vegetables/fruits </li>
+									<li> Yogurt </li>
+									<li> Packaged cheese </li>
+								</ol>
+							</div>
+
+							<div style="margin-top: 20px;">
+								<b>Aisles with the most products across all departments (top 5)</b>
+								<ol>
+									<li> Candy/chocolate </li>
+									<li> Ice cream </li>
+									<li> Vitamins/supplements </li>
+									<li> Yogurt </li>
+									<li> Chips </li>
+								</ol>
+							</div>
+
+							<div style="margin-top: 20px;">
+								<b>The most ordered products (top 7)</b>
+								<ol>
+									<li> Bananas </li>
+									<li> Strawberries </li>
+									<li> Spinach </li>
+									<li> Avocados </li>
+									<li> Lemons </li>
+									<li> Limes </li>
+									<li> Milk </li>
+								</ol>
+							</div>
+
+							<div style="margin-top: 20px;">
+								<b>The most reordered products (top 7)</b>
+								<ol>
+									<li> Serenity Overnight Pads </li>
+									<li> Chocolate Love Bars </li>
+									<li> Maca Buttercups </li>
+									<li> Benchbreak Chardonnay </li>
+									<li> Organic Blueberry B'Mega (drink) </li>
+									<li> Fragrance Free Clay </li>
+									<li> Thousand Island Salad Snax </li>
+								</ol>
 							</div>
 						</div>
 					</div>

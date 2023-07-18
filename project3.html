@@ -53,7 +53,7 @@
 							<div style="margin-top: 44px;">
 								<div>
 									Our goal in this project is to conduct a data analysis on our customer sales
-									dataset. To help us with our analysis, we'll use an RFM report, which is a method of 
+									dataset. To help us with a part of our analysis, we'll use RFM, which is a method of 
 									segmenting customers using these three metrics: 
 									<ol>
 										<li> recency (how long ago their last purchase was), </li>
@@ -77,27 +77,32 @@
 
 						<div>
 
-							So first, I did some analysis in SQL. I started off by inspecting the data and then
-							preparing the data for analysis by grouping sales by product line.
+							<div>
+								First, we did some analysis in SQL. We started off by inspecting the data and then
+								preparing the data for analysis by grouping sales by product line.
+							</div>
 
-							<br/>
-								
-							I then ran queries to answer the following questions:
+							<div style="margin-top: 20px;">
+								We then ran queries to answer the following questions:
+								<ul> 
+									<li> Which month was the best month for sales in a given year, and how much revenue was
+										earned in that best month? </li>
+									<li> Which of the customers is the "best"? (Here is where we used RFM)</li>
+									<li> Which products are most often sold together? </li>
+									<li> What is the best product sold in the US? </li>
+									<li> Which city of a given country has the highest number of sales? (Picking the country arbitrarily) </li>
+								</ul>
+							</div>
 
-							<ul> 
-								<li> Which month was the best month for sales in a given year, and how much revenue was
-									earned in that best month? </li>
-								<li> Which of the customers is the "best"? (Here is where I used RFM)</li>
-								<li> Which products are most often sold together? </li>
-								<li> What is the best product sold in the US? </li>
-								<li> Which city of a given country has the highest number of sales? (Picking the country arbitrarily) </li>
-							</ul>
-
-							After finishing this analysis, we find out things such as: November is the best month for sales (with $1,089,048), and within that month, classic
-							cars had the most sales. The product codes that sold best together were: S50_1341, S700_1691, and S700_3167.
-
-							<br/>
-
+							<div>
+								After finishing this analysis, some of our findings include: 
+								<ul>
+									<li> November is the best month for sales (with $1,089,048)</li>
+									<li> Within the month of November, classic
+										cars were the products with the most sales.  </li>
+									<li> The product codes that sold best together were: S50_1341, S700_1691, and S700_3167.</li>
+								</ul>
+							</div>
 							<div style="margin-top: 20px;">
 								Click 
 								<a href="https://github.com/benwho19/customer-sales/blob/main/RFM_Segmentation_Sales_Analysis_Main.sql" 
@@ -107,19 +112,33 @@
 						</div>
 
 						<div>
-							Next, I created two dashboards in Tableau. These dashboards showed statistics such as our distribution of sales,
-							distribution of quantity, revenue by country, customer distribution by country, and more.
+							Next, we created two dashboards in Tableau. Click 
+							<a href="https://public.tableau.com/app/profile/benjamin.ho7282/viz/SalesDashboard1_16856649388580/SalesDash2" 
+							target="_blank" rel="noopener noreferrer"> here </a>
+							to view them in Tableau.
 
 							<br/>
 
 							<div style="margin-top: 20px;"/>
 
-							Click 
-							<a href="https://public.tableau.com/app/profile/benjamin.ho7282/viz/SalesDashboard1_16856649388580/SalesDash2" 
-							target="_blank" rel="noopener noreferrer"> here </a>
-							to view them in Tableau.
+							<!-- These dashboards showed statistics such as our distribution of sales,
+							distribution of quantity, revenue by country, customer distribution by country, and more. -->
 
+							This first dashboard shows revenue by country, the quantity distribution, the sales distribution, and
+							the customer distribution by country.
 							<img class="image fit" src="images/project3/sales-dash-1.png" alt="" width="50%"/>
+
+
+							<div style="margin-top: 20px;">
+
+							This second dashboard shows revenue by product line, deal size distribution, revenue by status,
+							sales by product line and order year, and monthly sales by country.
+							
+							
+							</div>
+
+
+
 							<img class="image fit" src="images/project3/sales-dash-2.png" alt="" width="50%"/>
 
 						</div>
