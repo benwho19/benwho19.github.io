@@ -52,32 +52,48 @@
 							</div>
 
 							<div style="margin-top: 44px;">
-								<div>
-									Having at one time been an economics major in school, I've always been curious about the study of 
-									people's behaviors, especially when related to markets and money. 
 
-									It's always been interesting to see the trends we can extrapolate from aggregating tons of data on 
-									people's individual choices and habits. 
+								<b> Backstory </b>
+								<div style="margin-top: 15px;">
+									Have you ever walked the aisles of a Target, or Safeway, or your grocery store of choice, and
+									wondered which products were in other people's shopping carts? 
+								</div>
+
+								<div style="margin-top: 20px;">
+
+									<i> What're they making for dinner tonight? What's a popular brand of salsa? Which crackers pair well with this spread? </i>
 
 								</div>
 
 								<div style="margin-top: 20px;">
 
-									In this project, we will be analyzing a dataset containing 3 million orders from 200,000 Instacart 
-									users. These orders were anonymized and the data includes things like the products within these orders, 
+									Hopefully, that's not just me. It's even more interesting when we can do this at scale: to see the 
+									trends that can be extrapolated from aggregating tons of data on people's individual choices and habits.
+									Come along with me as I take a peek into the shopping carts of a few hundred thousand people.
+
+								</div>
+
+								<div style="margin-top: 20px;"> <b> The Data </b> </div>
+
+								<div style="margin-top: 20px;">
+
+									We will be analyzing a dataset containing 3 million orders from 200,000 Instacart 
+									users. These orders were anonymized and the data include things like the products within these orders, 
 									the aisles and departments these items are found in, and the days and times that these orders were completed.
 
-
 								</div>
 
+
+								<div style="margin-top: 20px;"> <b> Key Questions </b> </div>
+
 								<div style="margin-top: 20px;">
-									At the outset, some questions that popped into my mind were:
-									<ul>
+									Some key questions I will answer:
+									<ol>
 										<li> Which items are the most popular? What are some ways we can measure this?</li>
 										<li> Are there sections of the store that are most popular? </li>
 										<li> Is there a day and a time of day that are most popular for shopping? </li>
 
-									</ul>
+									</ol>
 
 									We'll use Python, Pandas, NumPy, and other libraries to help tackle these questions and more.
 
@@ -89,7 +105,8 @@
 
 						<div className="" style="display: flex; justify-content: space-between;">
 							<div style="width: 40%;"> 
-								<div>
+								<b> Most Ordered </b>
+								<div style="margin-top: 15px;">
 									After our library imports, file read-ins, and initial peek at our data, one of the first things we want
 									to take a look at is:
 									which products were the most ordered? 
@@ -107,8 +124,8 @@
 						</div>
 						<div style="display: flex; justify-content: space-between;">
 							<div style="width: 40%;">
-
-								<div>
+								<b> Most Popular Time of Day </b>
+								<div style="margin-top: 15px;">
 									Next, we want to see which time of day is the most popular for users to place
 									their orders.
 								</div>
@@ -124,8 +141,9 @@
 
 						<div style="display: flex; justify-content: space-between;">
 							<div style="width: 40%;">
+								<b> Most Popular Interval For Reordering </b>
 
-								<div>
+								<div style="margin-top: 15px;">
 									We were also curious about users' reorders of the same products, specifically: what were the most
 									common intervals of time between an order and a reorder of that same product by a given
 									user?
@@ -145,7 +163,9 @@
 						<div style="display: flex; justify-content: space-between;">
 							<div style="width: 45%;">
 
-								<div>
+								<b> Best-selling Aisles </b>
+
+								<div style="margin-top: 15px;">
 									Finally, we want to see which aisles were the best-selling
 									in terms of user orders.
 
@@ -162,12 +182,19 @@
 						</div>
 
 						<div>
-							<div style="margin-bottom: 24px;">
-								We answered many more questions similar to these, so click <a
+							<b> Conclusion </b>
+
+							<div style="margin-top: 15px;">
+								Okay, so we saw some of our most pressing questions answered. People sure like their fruits and
+								veggies, and they also like to put their Instacart orders in while they're at work.
+				
+							</div>
+							<div style="margin-top: 15px; margin-bottom: 24px;">
+								I answered many more questions similar to these, so click <b><a
 								href="https://github.com/benwho19/instacart-analysis/blob/main/Instacart.ipynb"
-							target="_blank" rel="noopener noreferrer"> here </a> to see the full
+							target="_blank" rel="noopener noreferrer"> here </a></b> to see the full
 							analysis in the Jupyter notebook.
-							Otherwise, we have listed a summary of our findings below.
+							Otherwise, I have listed a summary of our findings below.
 
 							</div>
 							<h2> Summary of findings: </h3>

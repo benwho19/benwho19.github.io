@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Benjamin Ho</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">Projects</div>
+						<!-- <a href="index.html" class="logo">Projects</a> -->
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">About Me</a></li>
+							<li class="active"><a href="projects.html">Projects</a></li>
+							<li><a href="resume.html">Resumé</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/benjamin-ho-asd/" class="icon brands fa-linkedin"
+								target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+							<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+							<li><a href="https://github.com/benwho19" class="icon brands fa-github"
+								target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div style="display: flex; flex-direction: column;">
+							<!-- <ul class="actions special">
+								<li><a href="projects.html" class="button icon solid solo fa-arrow-left">Continue</a></li>
+							</ul> -->
+							<div style="display: flex; justify-content: space-between;">
+								<!-- <a href="projects.html" class="button icon solid solo fa-arrow-left">Continue</a> -->
+								<a href="projects.html" class="button icon solid fa-arrow-left"> All projects </a>
+								<h2> Zillow Price Analysis  </h2> 
+								<a href="https://github.com/benwho19/zillow-analysis" class="button"
+								target="_blank" rel="noopener noreferrer">View code</a>
+							</div>
+
+							<div style="margin-top: 44px;">
+
+
+								<b> Backstory </b>
+
+								<div style="margin-top: 20px;"> <i> Whoa. Is this house really worth that much? </i> </div>
+								<div style="margin-top: 20px;">
+									
+
+									This is my reaction whenever I see the eye-watering sum that's being asked for on average for a
+									house in the Bay Area.
+
+									It's no surprise that the prices here are some of the highest in the country, but I wanted to some actual numbers behind
+									this, and to also see housing price trends in the rest of the country.
+
+								</div>
+
+								<!-- <div style="margin-top: 20px;">
+									This is one of many problems endemic to ....  Homelessness and .... often go hand-in-hand.
+									This .... will only get worse and worse.
+								</div> -->
+
+								<div style="margin-top: 20px;">
+									
+									It's also interesting to see how marketplaces like Zillow value a home, and to see how well those estimates 
+									reflect the reality of the listed price.
+
+								</div>
+
+								<div style="margin-top: 15px;"> <b> The Data </b> </div>
+
+								<div style="margin-top: 15px;"> 
+									The dataset we are looking at contains about 20,000 homes and has information such as its listed price,
+									its Zillow-estimated rent, its Zillow-estimated value, and its price per square foot. 
+								</div>
+
+								<div style="margin-top: 15px;">
+									In all, we have a total of 14 columns:
+									<u>State</u>, City, Street, Zipcode, Bedroom, Bathroom, <u>Area</u>, <u>PPSq</u>, LotArea, <u>MarketEstimate</u>, <u>RentEstimate</u>,
+									 Latitude, Longitude, and <u>ListedPrice</u>.
+								</div>
+
+								<div style="margin-top: 15px;"> <b> Key Questions </b> </div>
+
+								<div style="margin-top: 20px;">
+									
+									My analysis will answer these questions:
+									<ol>
+										<li> Which states are the most expensive to rent in and to purchase a home in?  </li>
+										<li> Which states are the most expensive to purchase a home in?  </li>
+										<li> Given the choice between renting and owning, which states are the best and worst to rent in? </li>
+										<li> Which states (according to Zillow) have the most over-valued homes? And the most under-valued? </li>
+									</ol>
+								</div>
+
+								<div style="margin-top: 20px;">
+									I will use SQL and Tableau to help me answer them.
+								</div>
+							</div>
+
+							<div style="margin-top: 20px;">
+							</div>
+						</div>
+
+						<div>
+							<b> Data Overview </b>
+							<div style="margin-top: 15px;">
+								First, we'll take a look at the dataset. We'll write a query that gives us a count of all rows,
+								so we'll see how large of a dataset we're dealing with.
+							</div>
+
+							<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+								<img class="image fit" src="images/project3/count-all.png" style="height: 40px; width: 450px;" alt=""/>
+								<div style="display: flex; width: 40%;">
+									<img class="image fit" src="images/project3/count-all-table.png"  style="height: 50px; width: 300px; padding-left: 35px;" alt=""/>
+								</div>
+								
+							</div>
+
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<img class="image fit" src="images/project3/rows-per-state.png" style="height: 40px; width: 550px;" alt=""/>
+								<img class="image fit" src="images/project3/rows-per-state-table.png"  style="height: 200px; padding-left: 35px;" alt=""/>
+							</div>
+							<div> So we see that our total number of rows is 21,840, and each state has about 400-500 entries. </div>
+						</div>
+
+						<div>
+
+							<b> Highest Rents, Home Prices, and Prices Per SqFt </b>
+
+							<div style="margin-top: 15px;">
+								Next, we'll write a query that tells us the top 10 states with the highest median rents. 
+
+								Then we'll do the same for the top estimated home prices and also for prices per square foot. 
+							</div>
+
+							<div style="margin-top: 15px;">
+								<i>Side note: you will see me use the MEDIAN funtion below. Many versions of SQL (for example, SQL Server)
+									don't have a built-in MEDIAN function. In those cases, we can simply use
+									<a href="https://learn.microsoft.com/en-us/sql/t-sql/functions/percentile-cont-transact-sql?view=sql-server-ver16"
+									target="_blank" rel="noopener noreferrer"> 
+									PERCENTILE_CONT</a>, passing in 0.5 as our input value.</i>
+
+							</div>
+
+							<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+								<img class="image fit" src="images/project3/top-10-rent.png" style="height: 160px" alt=""/>
+								<img class="image fit" src="images/project3/top-10-rent-table.png"  style="height: 200px; padding-left: 35px;" alt=""/>
+							</div>
+
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<img class="image fit" src="images/project3/top-10-mkt-est.png" style="height: 160px" alt=""/>
+								<img class="image fit" src="images/project3/top-10-mkt-est-table.png"  style="height: 200px; padding-left: 35px;" alt=""/>
+							</div>
+
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<img class="image fit" src="images/project3/top-10-ppsq.png" style="height: 180px; width: 400px;" alt=""/>
+								<img class="image fit" src="images/project3/top-10-ppsq-table.png"  style="height: 200px; width: 500px; padding-left: 35px;" alt=""/>
+							</div>
+
+							<div style="margin-top: 15px;">  
+								Here, we see that CA holds the top spot and MA is either 2nd or
+								3rd place in all three categories.
+								CO, RI are in the top 10 for all three categories as well. 
+							
+							</div>
+
+
+						</div>
+
+						<div>
+							<b> Renting vs. Owning </b>
+							<div style="margin-top: 15px;">
+								Taking a look at my earlier question, <i>
+								'Given the choice between renting and owning, which states are the best and worst to rent in?' </i>, 
+								I wrote this query. 
+
+								In order to answer this question, I decided to use the ratio between a state's median estimated rent 
+								and its median estimated home price. <i>(For example, if State A's rent:owning ratio is 1% and State B's ratio is 2%,
+								I would conclude that renting is a better deal in State A than it is in State B.)</i>
+								<br/>
+								I used a CTE to create a new column for this ratio value.
+							</div>
+
+							<div style="display: flex; justify-content: space-between; margin-top: 15px; align-items: center;">
+								<img class="image fit" src="images/project3/top-10-ratio.png" style="height: 300px" alt=""/>
+								<img class="image fit" src="images/project3/top-10-ratio-table.png"  style="height: 200px; padding-left: 35px;" alt=""/>
+							</div>
+
+							<div style="display: flex; justify-content: space-between; margin-top: 15px; align-items: center;">
+								<img class="image fit" src="images/project3/bottom-10-ratio.png" style="height: 150px" alt=""/>
+								<img class="image fit" src="images/project3/bottom-10-ratio-table.png"  style="height: 200px; padding-left: 35px;" alt=""/>
+							</div>
+
+							<div style="margin-top: 15px;">  Here, we see that the highest rent ratio in the U.S. is 0.98% in MS. Interestingly,
+								CA has the lowest ratio of 0.44% - so as expensive as rents are in CA, it's still much, much more expensive to buy a home there.
+							
+							</div>
+						</div>
+
+						<div>
+							<b> Valuation: Over vs. Under </b>
+							<div style="margin-top: 15px;">
+								Next, I wanted to answer the question of <i> 'Which states (according to Zillow) have the 
+								most over- and the most under-valued homes?' </i>
+
+								In order to do this, I used a CTE to create a new column called 'overvalue_difference', which is simply
+								the difference of ListedPrice minus the MarketEstimate.
+							</div>
+
+							<div style="display: flex; justify-content: space-between; margin-top: 15px;align-items: center;">
+								<img class="image fit" src="images/project3/overvalue.png" style="height: 300px;" alt=""/>
+								<img class="image fit" src="images/project3/overvalue-table.png"  style="height: 200px; padding-left: 35px;"  alt=""/>
+							</div>
+
+							<div style="display: flex; justify-content: space-between; margin-top: 15px; align-items: center;">
+								<img class="image fit" src="images/project3/undervalue.png" style="height: 150px;" alt=""/>
+								<img class="image fit" src="images/project3/undervalue-table.png"  style="height: 200px; padding-left: 35px;"  alt=""/>
+							</div>
+
+							<div style="margin-top: 15px;">  
+								Here, we see the top 10 states with overvalued homes and the bottom 10 with undervalued homes.
+								Interestingly, Zillow thinks that CA homes are quite undervalued.
+							</div>
+						</div>
+
+						<div>
+							<b> Tableau Dashboard </b>
+							<div style="margin-top: 15px;">
+								Our <a href="https://public.tableau.com/app/profile/benjamin.ho7282/viz/ZillowAnalysis_17044341688030/ZillowAnalysisDashboard" 
+									target="_blank" rel="noopener noreferrer"> dashboard </a>, which is embedded below, shows 4 key metrics: 
+									Rent Vs. Price, Price Per Sq Ft, Median Rent, and Median Price.
+
+								<!-- <a href="https://public.tableau.com/app/profile/benjamin.ho7282/viz/ZillowAnalysis_17044341688030/ZillowAnalysisDashboard"
+								target="_blank" rel="noopener noreferrer" class="image fit">
+									<img class="image fit" src="images/project3/dashboard.png" alt="" width="50%" style="border: 2px solid gray;"/>
+								</a> -->
+								<!-- <img class="image fit" src="images/project3/dashboard.png" alt="" width="50%" style="border: 1px solid black;"/> -->
+
+								<div class='tableauPlaceholder' id='viz1704758076495' style='position: relative'><noscript><a href='#'>
+									<img alt='Zillow Analysis Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Zi&#47;ZillowAnalysis_17044341688030&#47;ZillowAnalysisDashboard&#47;1_rss.png' 
+									style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'>
+									<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+									<param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+									<param name='name' value='ZillowAnalysis_17044341688030&#47;ZillowAnalysisDashboard' /><param name='tabs' value='no' />
+									<param name='toolbar' value='yes' />
+									<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Zi&#47;ZillowAnalysis_17044341688030&#47;ZillowAnalysisDashboard&#47;1.png' />
+									<param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' />
+									<param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' />
+									<param name='filter' value='publish=yes' /></object></div>   <script type='text/javascript'>                    
+									var divElement = document.getElementById('viz1704758076495');                    
+									var vizElement = divElement.getElementsByTagName('object')[0]; 
+									if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+									else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+									else { vizElement.style.width='100%';vizElement.style.height='1127px';}                     
+									var scriptElement = document.createElement('script'); 
+								scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+								</script>
+
+								<div style="margin-top: 35px;">
+									In our two bar charts, the bar heights represent the median values and the bar
+									colors (shades) represent the average values. In many cases, there was a noticeable difference between the two,
+									and it was interesting to see them displayed here (for example, we can see that in NV,
+									the average rent is much higher than the median rent, and the average price is also much higher than the median price.)
+								</div>
+
+								<div style="margin-top: 20px;">
+									In our Price Per Sq Ft map, we see that CA and MA are among the most expensive (darkest) states.
+								</div>
+
+								<div style="margin-top: 20px;"> 
+									In our scatter plot, we see that CA leads the country in both rents and home prices. We also
+									see the general trend that rents are associated with home prices (as one rises, so does the other.)
+								</div>
+
+
+							</div>
+						</div>
+						<div>
+							<b> Conclusion </b>
+							<div style="margin-top: 15px;">
+								
+								I was not at all surprised to see CA topping pretty much every list when it comes to high cost.
+								I also was not suprised to see like MA and CO being expensive as well (though I didn't think 
+								MA would be <i> that </i> expensive).
+								However, I did think states like NY and TX would be ranked much higher up.
+							</div>
+
+							<div style="margin-top: 15px;">
+								A lot of our top 10 states also make an appearance in 
+								<a href="https://www.zillow.com/research/most-valuable-housing-markets-32246/"
+								target="_blank" rel="noopener noreferrer"> this </a>
+								Zillow article on the largest housing markets in the U.S. (though the aggregation they used here was the 
+								<b><i>sum</i></b>, not the median, of each state's housing market. This would favor the highly 
+								populous states like CA, TX, NY, and FL, so there were also some differences here too.)
+
+							</div>
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

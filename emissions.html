@@ -52,48 +52,60 @@
 
 							<div style="margin-top: 44px;">
 
-
-
-								<div>
+								<b> Backstory </b>
+								<div style="margin-top: 15px;">
 
 									Climate change continues to be one of the largest looming threats we face in society. 
 									There are a myriad contributing factors as well as various potential solutions.
 
 									CO2 emissions are one of the leading causes of the acceleration of climate
-									change, so it may be prescient to understand how our daily habits relate to these emissions, 
-									so that we can aim for solutions towards a more sustainable tomorrow.
+									change, so it may be prescient to understand how our daily habits contribute to these emissions. 
+									This will help us make better decisions and aim for solutions towards a more sustainable tomorrow.
 
 								</div>
 
+								<div style="margin-top: 15px;"> <b> The Data </b> </div>
 
-
-								<div style="margin-top: 20px;">
+								<div style="margin-top: 15px;">
 									In this project, we will be working with a vehicle dataset containing 16 vehicle classes (ex: sedan), 
 									42 makes (ex: Honda), and over 2,000 different models (ex: Accord).
 									This dataset contains data such as characteristics of a vehicle (size, number of cylinders, etc.) 
 									and its level of emissions.
-
 								</div>
 
-								<div style="margin-top: 20px;">
+								<div style="margin-top: 15px;"> <b> Key Questions </b> </div>
+
+								<div style="margin-top: 15px;">
+									Some key questions I will answer are:
+									<ol>
+										<li> Which car companies are the worst in terms of CO2 emissions? Which are the best? </li>
+										<li> Which features of a car are most strongly associated with CO2 emissions? </li>
+										<li> How well can we predict a car's CO2 emissions if we have information on its features? </li>
+									</ol>
+								</div>
+
+								<!-- <div style="margin-top: 20px;">
 									Our first objective is to conduct an exploratory data analysis so we can better understand our data and 
 									also identify interesting trends and statistics about these classes, makes, and models.
-								</div>
+								</div> -->
 
-								<div style="margin-top: 20px;">
+								<!-- <div style="margin-top: 20px;">
 									Next, we want to identify which features of a vehicle correlate most strongly with its CO2 emissions. 
 									This will show us which features we can then run a linear regression model on, to see how well we're able to 
 									predict a vehicle's emissions.
-									
-								</div>
-								<div style="margin-top: 20px;">
-									We'll use Python, Pandas, Scikit-learn, and other libraries to help us accomplish this.
+								</div> -->
+
+								<div style="margin-top: 15px;">
+									We'll use Python, Pandas, Scikit-learn, and other libraries to help us answer these questions.
 								</div>
 							</div>
 						</div>
 
 						<div>
-							<div>
+							<b> Data Overview </b>
+							<div style="margin-top: 15px;">
+								Our first objective is to conduct an exploratory data analysis so we can better understand our data and 
+								also identify interesting trends and statistics about these classes, makes, and models.
 								Here's a quick look at what the data's format looks like:
 							</div>
 							<img class="image fit" src="images/project1/emissions-head.png" alt="" width="90%"/>
@@ -101,7 +113,8 @@
 
 						<div className="" style="display: flex; flex-direction: column; justify-content:space-between;">
 							<div> 
-								<div>
+								<b> Best and Worst Performers </b>
+								<div style="margin-top: 15px;">
 									After getting a brief look at the data by using various Pandas methods 
 									(such as .head, .describe, etc.), we conducted an exploratory data analysis
 									to do a deeper dive into the data. 
@@ -122,7 +135,8 @@
 
 						<div className="" style="display: flex; flex-direction: column; justify-content:space-between;">
 							<div> 
-								<div style="margin-bottom: 20px;">
+								<b> Box Plots and IQRs </b>
+								<div style="margin-top: 15px; margin-bottom: 20px;">
 									Next, we'll get a more detailed look at this same comparison by looking at the 
 									box plots for each vehicle make. This lets us take a look at the median emissions for 
 									each vehicle make as well as its interquartile range (IQR). And then we can 
@@ -145,7 +159,8 @@
 
 						<div className="" style="display: flex; flex-direction: column; justify-content:space-between;">
 							<div> 
-								<div>
+								<b> Fuel Consumption and Number of Cylinders </b>
+								<div style="margin-top: 15px;">
 									Next, we explored other features such as a vehicle's fuel consumption in the city
 									vs. on the highway (bottom-left chart) and the number of cylinders in a vehicle (bottom-right chart).
 
@@ -171,10 +186,16 @@
 						</div>
 						<div style="display: flex; flex-direction: column; justify-content: space-between;">
 							<div>
-								<div>
+								<b> Preparing For Regression Models </b>
+
+								<div style="margin-top: 15px;">
+
 									After finishing the EDA, we then wanted to build a linear regression model to make predictions
 									on a vehicle's CO2 emissions based on its other features. First,
-									we looked for relationships between the features of our data.
+									we looked for relationships between the features of our data, so we can identify which features of a 
+									vehicle correlate most strongly with its CO2 emissions. 
+									This will show us which features we can then run a linear regression model on, to see how well we're able to 
+									predict a vehicle's emissions.
 								</div>
 
 								<div style="margin-top: 20px;">
@@ -202,6 +223,7 @@
 						</div>
 
 						<div>
+							<b> Building and Training the Regression Models </b>
 							<div style="margin-top: 20px;">
 								We first
 								split our data into a training set and test set.
@@ -210,23 +232,23 @@
 							</div>
 
 							<div style="margin-top: 20px;">
-								Our simple linear regression model achieved a 64% accuracy in predicting a vehicle's CO2 emissions
+								Our simple linear regression model achieved a <b>64% accuracy</b> in predicting a vehicle's CO2 emissions
 								from its engine size. 
 								<ul>
-									<li> R2 score: 0.64 </li>
-									<li> Mean absolute error: 22.69 </li>
-									<li> Mean squared error: 895.56 </li>
-									<li> Root mean squared error: 29.93 </li>
+									<li> <u>R2 score</u>: 0.64 </li>
+									<li> <u>Mean absolute error</u>: 22.69 </li>
+									<li> <u>Mean squared error</u>: 895.56 </li>
+									<li> <u>Root mean squared error</u>: 29.93 </li>
 								</ul>
 
 								We could do better. So we then run a multiple linear regression model, which now additionally uses a vehicle's number of
-								cylinders and combined fuel consumption to predict its emissions, and we are able to achieve an 86%
-								accuracy.
+								cylinders and combined fuel consumption to predict its emissions, and we are able to achieve an <b>86%
+								accuracy</b>.
 								<ul>
-									<li> R2 score: 0.86 </li>
-									<li> Mean absolute error: 13.15 </li>
-									<li> Mean squared error: 421.15 </li>
-									<li> Root mean squared error: 20.52 </li>
+									<li> <u>R2 score</u>: 0.86 </li>
+									<li> <u>Mean absolute error</u>: 13.15 </li>
+									<li> <u>Mean squared error</u>: 421.15 </li>
+									<li> <u>Root mean squared error</u>: 20.52 </li>
 								</ul>
 
 								We see that our R2 score is higher and our MAE, MSE, and RMSE are all lower.
@@ -234,17 +256,21 @@
 									The MAE, MSE, and RMSE all measure the amount of error from our model, so a lower number is better for
 									these three.
 									To see further explanations for these metrics, see the Jupyter notebook that is linked below.)</i>
-
 							</div>
-
-
 						</div>
 
 						<div>
-							<div style="margin-bottom: 24px;">
-								Click <a
+							<b> Conclusion </b>
+							<div style="margin-top: 15px;">  
+								I'm happy with the analysis that we were able to do, like identify which car companies 
+								have the best and the worst emissions. I'm also happy at the performance of our multiple
+								linear regression model, and how well it was able to predict a vehicle's emissions.
+							
+							</div>
+							<div style="margin-top: 15px; margin-bottom: 24px;">
+								Click <b><a
 								href="https://github.com/benwho19/carbon-emissions/blob/main/CO2-Linear-Regression.ipynb"
-							target="_blank" rel="noopener noreferrer"> here </a> to see the full
+							target="_blank" rel="noopener noreferrer"> here </a></b> to see the full
 							analysis in the Jupyter notebook.
 							Otherwise, we have listed a summary of our findings below.
 
@@ -268,13 +294,13 @@
 								</ul>
 
 								<b> Results from our predictions:</b>
-								<ul>
+								<ol>
 									<li> Our simple linear regression model used engine size to predict CO2 emission 
 										levels. This model achieved a 64% accuracy in its prediction. </li>
 									<li> Our multiple linear regression model used engine size, number of cylinders, 
 										and combined fuel consumption to predict CO2 emission levels. This model achieved 
 										an 86% accuracy in its prediction.</li>
-								</ul>
+								</ol>
 							</div>
 						</div>
 					</div>
